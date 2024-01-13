@@ -1,0 +1,32 @@
+sort1 uses: bubble sort
+
+How do you know?: BUBBLE times for should be significantly faster for sorted lists than unsorted lists and produce similar times to SELECTION for random/reversed lists, but slower than MERGE.
+
+sort2 uses: merge sort
+
+How do you know?: MERGE times for same n should not change signifcantly whether sorted/unsorted, but should be second fastest (after BUBBLE) for sorted lists.
+
+sort3 uses: selection sort
+
+How do you know?: SELECTION times for same n should not change sigificantly whether sorted/unsorted, consistently be slower than MERGE but in almost all unsorted cases be faster than BUBBLE. SELECTION will be slower than BUBBLE in sorted list cases.
+
+Ref. data
+           (sort1)     (sort2)    (sort3)
+---------------------------------------------
+<Sorted>
+5000        0.031 1     0.043 2    0.052 3
+10000       0.060 1     0.063 2    0.128 3
+50000       0.431 1     0.447 2    2.253 3
+            bubble1     merge2     selection3
+---------------------------------------------
+<Random>
+5000        0.080 3     0.033 1    0.046 2
+10000       0.303 3     0.079 1    0.152 2
+50000       5.664 3     0.489 1    2.228 2
+            bubble2     merge1     selection2
+---------------------------------------------
+<Reversed>
+5000        0.096 3     0.038 1    0.092 2
+10000       0.250 3     0.087 1    0.153 2
+50000       5.029 3     0.538 1    2.579 2
+            bubble2    merge1      selection2
